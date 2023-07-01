@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import Card from "./Card";
 import "./AddUser.css";
+import ErrorModal from "./ErrorModal";
 
 export default function AddUser(props) {
   const [userData, setUserData] = useState({ userName: "", userAge: "" });
+  const [show, setShow] = useState(false);
 
   function changeHandler(input, value) {
     setUserData((prevData) => {
@@ -16,9 +18,9 @@ export default function AddUser(props) {
 
   function submitHandler(e) {
     e.preventDefault();
-    if (userData.userName.trim().length === 0 && userData.userAge < 0) return;
+    if (!userData.userName || !userData.userAge) return setShow(true);
     props.onAddUser(userData);
-    console.log(userData)
+    console.log(userData);
   }
 
   return (
@@ -44,6 +46,7 @@ export default function AddUser(props) {
         />
         <button type="submit">Add User</button>
       </form>
+      {show && <ErrorModal />}
     </Card>
   );
 }

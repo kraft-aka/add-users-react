@@ -3,6 +3,11 @@ import './ErrorModal.css'
 
 export default function ErrorModal(props) {
 
+  // TODO: function to hide modal
+  // function hideModal(e) {
+
+  // }
+
   return (
     <div className='backdrop'>
       <div className='modal'>
