@@ -1,5 +1,6 @@
 import { useState } from "react";
 import AddUser from "./components/AddUser";
+import ErrorModal from "./components/ErrorModal";
 import UsersList from "./components/UsersList";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <h1>Add Users</h1>
       <AddUser onAddUser={addUser} />
       <UsersList data={user} />
+      {!AddUser && <ErrorModal />}
     </>
   );
 }

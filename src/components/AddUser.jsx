@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Card from "./Card";
-import './AddUser.css'
+import "./AddUser.css";
 
 export default function AddUser(props) {
   const [userData, setUserData] = useState({ userName: "", userAge: "" });
@@ -16,22 +16,28 @@ export default function AddUser(props) {
 
   function submitHandler(e) {
     e.preventDefault();
+    if (userData.userName.trim().length === 0 && userData.userAge < 0) return;
     props.onAddUser(userData);
+    console.log(userData)
   }
 
   return (
-    <Card className='input'>
+    <Card className="input">
       <form onSubmit={submitHandler}>
-        <label htmlFor="userName" className="label">Username</label>
+        <label htmlFor="userName" className="label">
+          Username
+        </label>
         <input
           className="input"
           type="text"
           onChange={(e) => changeHandler("userName", e.target.value)}
           value={userData.userName}
         />
-        <label htmlFor="userAge" className="label">Age(Years)</label>
+        <label htmlFor="userAge" className="label">
+          Age(Years)
+        </label>
         <input
-        className="input"
+          className="input"
           type="number"
           onChange={(e) => changeHandler("userAge", e.target.value)}
           value={userData.userAge}
