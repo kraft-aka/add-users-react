@@ -5,7 +5,7 @@ import ErrorModal from "./ErrorModal";
 
 export default function AddUser(props) {
   const [userData, setUserData] = useState({ userName: "", userAge: "" });
-  const [show, setShow] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   function changeHandler(input, value) {
     setUserData((prevData) => {
@@ -18,7 +18,7 @@ export default function AddUser(props) {
 
   function submitHandler(e) {
     e.preventDefault();
-    if (!userData.userName || !userData.userAge) return setShow(true);
+    if (!userData.userName || !userData.userAge) return setShowModal(true);
     props.onAddUser(userData);
     console.log(userData);
   }
@@ -46,7 +46,7 @@ export default function AddUser(props) {
         />
         <button type="submit">Add User</button>
       </form>
-      {show && <ErrorModal />}
+      {showModal && <ErrorModal showModal={showModal} closeModal={()=> setShowModal(false)}/>}
     </Card>
   );
 }

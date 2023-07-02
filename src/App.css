@@ -1,0 +1,12 @@
+body {
+  display: flex;
+  background-color: #e2cfcf;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+h1 {
+  color: #472c2c;
+  text-align: center;
+}
+

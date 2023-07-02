@@ -1,6 +1,6 @@
 import { useState } from "react";
 import AddUser from "./components/AddUser";
-import ErrorModal from "./components/ErrorModal";
+import './App.css'
 import UsersList from "./components/UsersList";
 
 function App() {

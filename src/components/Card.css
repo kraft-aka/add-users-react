@@ -1,5 +1,7 @@
 .card {
-  margin: 2rem auto;
+  margin: 5rem auto;
   width: 90%;
   max-width: 40rem;
+  border-radius: 1em;
+  background-color: #521c2f;
 }

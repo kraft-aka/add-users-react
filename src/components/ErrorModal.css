@@ -15,6 +15,7 @@
   width: 80%;
   z-index: 100;
   overflow: hidden;
+  background-color: #823dbe;
 }
 
 .header {
@@ -29,12 +30,14 @@
 
 .content {
   padding: 1rem;
+  text-align: center;
 }
 
 .actions {
   padding: 1rem;
   display: flex;
   justify-content: flex-end;
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {

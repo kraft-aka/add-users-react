@@ -3,11 +3,12 @@ import Card from "./Card";
 
 export default function UsersList(props) {
   return (
-    <Card className="users">
-      userList
+    <Card className="users" >
       {props.data.map((item) => (
-        <ul key={item.userAge+1} >
-          <li>Unsername: {item.userName}. Age:{item.userAge}</li>
+        <ul>
+          <li key={Number(item.userAge) + 1}>
+            {item.userName} {item.userAge}
+          </li>
         </ul>
       ))}
     </Card>
