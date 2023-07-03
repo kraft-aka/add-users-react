@@ -1,12 +1,20 @@
-body {
-  display: flex;
-  background-color: #e2cfcf;
-  flex-direction: column;
-  overflow: hidden;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+
+* {
+  box-sizing: border-box;
 }
 
-h1 {
-  color: #472c2c;
-  text-align: center;
+body {
+  display: flex;
+  background-color: #1f1f1f;
+  flex-direction: column;
+  overflow: hidden;
+  color: #1f1f1f;
+  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Roboto', sans-serif;
+
 }
+
 

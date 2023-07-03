@@ -1,8 +1,14 @@
-import React from 'react'
-import './Button.css'
+import React from "react";
+import "./Button.css";
 
 export default function Button(props) {
   return (
-      <button className='button' type='submit'>{props.children}</button>
-  )
+    <button
+      className="button"
+      type={props.type || "button"}
+      onClick={props.onClick}
+    >
+      {props.children}
+    </button>
+  );
 }

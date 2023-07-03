@@ -1,13 +1,14 @@
 import React from "react";
 import Card from "./Card";
+import './UsersList.css'
 
 export default function UsersList(props) {
   return (
-    <Card className="users" >
-      {props.data.map((item) => (
+    <Card className="users">
+      {props.data.map((user) => (
         <ul>
-          <li key={Number(item.userAge) + 1}>
-            {item.userName} {item.userAge}
+          <li>
+            {user.userName} {user.userAge} years old
           </li>
         </ul>
       ))}

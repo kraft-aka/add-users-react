@@ -8,14 +8,14 @@ function App() {
 
   function addUser(newUser) {
     setUser((prevUser) => {
-      return [newUser, ...prevUser];
+      return [...prevUser, newUser];
     });
+    console.log(user)
   }
 
   
   return (
     <>
-      <h1>Add Users</h1>
       <AddUser onAddUser={addUser} />
       <UsersList data={user} />
     </>

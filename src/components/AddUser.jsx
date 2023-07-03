@@ -4,8 +4,10 @@ import Button from "./Button";
 import "./AddUser.css";
 import ErrorModal from "./ErrorModal";
 
+const userInfo = { userName: "", userAge: "" };
+
 export default function AddUser(props) {
-  const [userData, setUserData] = useState({ userName: "", userAge: "" });
+  const [userData, setUserData] = useState(userInfo);
   const [showModal, setShowModal] = useState(false);
 
   function changeHandler(input, value) {
@@ -20,19 +22,22 @@ export default function AddUser(props) {
   function submitHandler(e) {
     e.preventDefault();
     if (!userData.userName || !userData.userAge) return setShowModal(true);
+    if (+userData.userAge < 1) return setShowModal(true);
     props.onAddUser(userData);
-    console.log(userData);
+    setUserData(userInfo);
+    //console.log(userData);
   }
 
   return (
     <Card className="input">
       <form onSubmit={submitHandler}>
-        <label htmlFor="userName" className="label">
+        <label htmlFor="username" className="label">
           Username
         </label>
         <input
           className="input"
           type="text"
+          id="username"
           onChange={(e) => changeHandler("userName", e.target.value)}
           value={userData.userName}
         />
@@ -42,12 +47,18 @@ export default function AddUser(props) {
         <input
           className="input"
           type="number"
+          id="age"
           onChange={(e) => changeHandler("userAge", e.target.value)}
           value={userData.userAge}
         />
-        <Button>Add User</Button>
+        <Button type="submit">Add User</Button>
       </form>
-      {showModal && <ErrorModal showModal={showModal} closeModal={()=> setShowModal(false)}/>}
+      {showModal && (
+        <ErrorModal
+          showModal={showModal}
+          closeModal={() => setShowModal(false)}
+        />
+      )}
     </Card>
   );
 }
