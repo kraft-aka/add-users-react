@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Card from "./Card";
+import Button from "./Button";
 import "./AddUser.css";
 import ErrorModal from "./ErrorModal";
 
@@ -44,7 +45,7 @@ export default function AddUser(props) {
           onChange={(e) => changeHandler("userAge", e.target.value)}
           value={userData.userAge}
         />
-        <button type="submit">Add User</button>
+        <Button>Add User</Button>
       </form>
       {showModal && <ErrorModal showModal={showModal} closeModal={()=> setShowModal(false)}/>}
     </Card>
