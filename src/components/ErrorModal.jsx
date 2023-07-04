@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Card from "./Card";
+import Button from "./Button";
 import "./ErrorModal.css";
 
 export default function ErrorModal(props) {
@@ -19,18 +20,18 @@ export default function ErrorModal(props) {
   }, []);
 
   return (
-    <div className="backdrop">
-      <div className="modal">
+    <div className="backdrop" onClick={clickHandlerModal}>
+      <Card className="modal">
         <div className="header">
-          <h2>Error Message</h2>
+          <h2>{props.title}</h2>
         </div>
 
-        <p className="content">Username and user Age required!</p>
+        <p className="content">{props.message}</p>
 
-        <div className="actions" onClick={clickHandlerModal}>
-          X
-        </div>
-      </div>
+        <Button className="actions" onClick={clickHandlerModal}>
+          OKAY!
+        </Button>
+      </Card>
     </div>
   );
 }

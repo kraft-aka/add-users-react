@@ -1,6 +1,6 @@
 import { useState } from "react";
 import AddUser from "./components/AddUser";
-import './App.css'
+import "./App.css";
 import UsersList from "./components/UsersList";
 
 function App() {
@@ -10,10 +10,9 @@ function App() {
     setUser((prevUser) => {
       return [...prevUser, newUser];
     });
-    console.log(user)
+    //console.log(user)
   }
 
-  
   return (
     <>
       <AddUser onAddUser={addUser} />

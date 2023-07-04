@@ -15,7 +15,7 @@
   width: 80%;
   z-index: 100;
   overflow: hidden;
-  background-color: #823dbe;
+  background-color: #f5f2f8;
 }
 
 .header {
@@ -38,6 +38,10 @@
   display: flex;
   justify-content: flex-end;
   cursor: pointer;
+}
+
+p {
+  font-weight: 700;
 }
 
 @media (min-width: 768px) {
